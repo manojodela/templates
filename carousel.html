@@ -1,0 +1,668 @@
+<!doctype html>
+<!--[if IE 8]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>The Heartfulness Carousel</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel='dns-prefetch' href='//polyfill.io' />
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+
+
+
+    <link rel='stylesheet' id='hfn-owl-carousel-css-css' href='owlcarousel/owl.carousel.min.css?ver=5.3.2'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='hfn-boostrap-css-css' href='bootstrap.min.css?ver=5.3.2' type='text/css' media='all' />
+    <link rel='stylesheet' id='hfn-owl-carousel-theme-css-css' href='owlcarousel/owl.theme.default.min.css?ver=5.3.2'
+        type='text/css' media='all' />
+    <link rel='stylesheet' id='hfn-boostrap-js-css' href='bootstrap.js?ver=5.3.2' type='text/css' media='all' />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"
+        integrity="sha256-SOuLUArmo4YXtXONKz+uxIGSKneCJG4x0nVcA0pFzV0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
+    <style>
+        body,
+        p {
+            font-family: Merriweather;
+
+        }
+
+        .review-book-info,
+        .events-info {
+            background-size: cover;
+            padding: 90px 0px;
+            background: #f5f5f5;
+        }
+
+        .review-book-info .hfnway-border {
+            margin: 20px 0px 0px;
+        }
+
+        .hfnway-border {
+            border-bottom: 1px solid #b0b0b0;
+            border-width: 2px;
+            width: 90px;
+        }
+
+        .book-endorsements {
+            text-align: center;
+            padding: 32px 15px;
+        }
+
+        .book-endorsements img {
+            width: 120px !important;
+        }
+
+        .endorsement-name {
+            font-size: 16px !important;
+            color: #000 !important;
+            margin: 0px;
+            padding: 16px 0px 6px;
+            line-height: 24px;
+            font-weight: 600;
+        }
+
+        .endorsement-position {
+            margin: 0px;
+            font-size: 12px;
+            line-height: 18px;
+            padding-bottom: 16px;
+            color: #e87c35 !important;
+        }
+
+        .endorsement {
+            font-size: 14px !important;
+            color: #000;
+            line-height: 22px !important;
+            margin: 0px !important;
+        }
+
+
+        #endorsements_slide a:hover {
+            text-decoration: none;
+        }
+
+        a:hover .book-endorsements {
+            background: #e87c35 !important;
+        }
+
+        a:hover .endorsement-name,
+        a:hover .endorsement-position,
+        a:hover .endorsement {
+            color: #fff !important;
+        }
+
+        #endorsements_slide .owl-nav .owl-next {
+            right: -24px !important;
+        }
+
+        #endorsements_slide .owl-nav .owl-prev {
+            left: -24px !important;
+        }
+
+        #endorsements_slide .owl-nav .owl-prev:hover,
+        #endorsements_slide .owl-nav .owl-next:hover {
+            background-color: rgba(255, 255, 255, 0) !important;
+        }
+
+        #endorsements_slide .owl-nav .owl-next {
+            background: rgba(255, 255, 255, 0.0) url('./black_icon_next.png') no-repeat center center !important;
+        }
+
+        #endorsements_slide .owl-nav .owl-prev {
+            background: rgba(255, 255, 255, 0.0) url('./black_icon_prev.png') no-repeat center center !important;
+        }
+
+        .endorsement-full-view .readmore-block {
+            padding-top: 30px;
+        }
+
+        .endorsement-full-view .hr-block {
+            padding-bottom: 0px;
+        }
+    </style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="review-book-info" id="endorsements">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="hfnway-section">Endorsements</h3>
+                    <div class="hfnway-border"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class='black'
+                    style='background:rgba(0,0,0,0); border:solid 0px rgba(0,0,0,0); border-radius:0px; padding:0px 26px 0px 26px;'>
+                    <div id='endorsements_slide' class='owl-carousel sa_owl_theme owl-pagination-true autohide-arrows'
+                        data-slider-id='endorsements_slide' style='visibility:hidden;'>
+                        <div id='endorsements_slide_slide01' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Sanjay-gupta"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./sanjay-gupta.png" />
+                                    <h3 class="endorsement-name">Dr. Sanjay Gupta</h3>
+                                    <h6 class="endorsement-position">A prominent neurosurgeon
+                                        and CNN’s Emmy award winning chief medical correspondent
+                                    </h6>
+                                    <p class="endorsement">“In this simple and elegant book,
+                                        Daaji reveals the ancient secrets of Heartfulness
+                                        meditation for a well-integrated life."</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide02' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Dr-Pankaj-Gupta"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src="./pankaj-gupta-img.png" />
+                                    <h3 class="endorsement-name">Dr. Pankaj Gupta</h3>
+                                    <h6 class="endorsement-position">Executive Director, Centre
+                                        for Ethics, Spirituality and Sustainability at O.P.
+                                        Jindal Global University, Delhi NCR.</h6>
+                                    <p class="endorsement">“Truly transformational"</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide03' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Suresh-Prabhu"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Suresh-Prabhu-img.png" />
+                                    <h3 class="endorsement-name">Suresh Prabhu </h3>
+                                    <h6 class="endorsement-position">Minister of Commerce and
+                                        Industry</h6>
+                                    <p class="endorsement">“A revolution in the field of
+                                        spirituality”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide04' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#CB-Patel"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./CB-Patel-img.png" />
+                                    <h3 class="endorsement-name">C.B. Patel</h3>
+                                    <h6 class="endorsement-position">Owner, Gujarat Samachar;
+                                        Asian Voice</h6>
+                                    <p class="endorsement">“This book will lead to the discovery
+                                        of your true potential."</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide05' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Latha-Rajan"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Latha-Rajan-img.png" />
+                                    <h3 class="endorsement-name">Latha Rajan</h3>
+                                    <h6 class="endorsement-position">Co- Founder, Chennai
+                                        Literary Association; Managing Director, Ma Foi
+                                        Foundation</h6>
+                                    <p class="endorsement">“The Heartfulness Way makes the
+                                        journey as enjoyable as the destination.”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide06' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Prof-Ramnath-Narayanswamy"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Prof-Ramnath-Narayanswamy.png" />
+                                    <h3 class="endorsement-name">Prof. Ramnath Narayanswamy</h3>
+                                    <h6 class="endorsement-position">Professor , IIM Bangalore
+                                    </h6>
+                                    <p class="endorsement">“A truly extraordinary book”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide07' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Dr-Ichak-Adizes"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./dr-adizes.png" />
+                                    <h3 class="endorsement-name">Dr. Ichak Adizes</h3>
+                                    <h6 class="endorsement-position">Founder and President of
+                                        the Adizes Institute</h6>
+                                    <p class="endorsement">“Indispensable to anyone who is
+                                        serious about self-development”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide08' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Rick-Perales"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Rick-Perales-img.png" />
+                                    <h3 class="endorsement-name">Rick Perales</h3>
+                                    <h6 class="endorsement-position">Ohio State Representative
+                                    </h6>
+                                    <p class="endorsement">“It is my hope that many more people
+                                        can learn these simple yet powerful techniques.”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide09' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#James-R-Doty"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./james-doty-img.png" />
+                                    <h3 class="endorsement-name">James R. Doty </h3>
+                                    <h6 class="endorsement-position">M.D. Author of Into the
+                                        Magic Shop, Professor of Neurosurgery at Stanford
+                                        University School of Medicine </h6>
+                                    <p class="endorsement">“As the authors so profoundly and
+                                        eloquently demonstrate in The Heartfulness Way,
+                                        ‘heartfulness’ is our natural state.”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide10' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Tim-Ryan"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Tim-Ryan-img.png" />
+                                    <h3 class="endorsement-name">Tim Ryan (OH) </h3>
+                                    <h6 class="endorsement-position">U.S. Representative </h6>
+                                    <p class="endorsement">“An invaluable addition to the vast
+                                        body of literature on meditation”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide11' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Robert-Schwartz"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Robert-Schwartz-img.png" />
+                                    <h3 class="endorsement-name">Robert Schwartz </h3>
+                                    <h6 class="endorsement-position">Author of Your Soul’s Plan;
+                                        and Your Soul's Gift</h6>
+                                    <p class="endorsement">“A clear and practical path to the
+                                        Divinity that lies within each of us” </p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide12' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Tejinder-Sharma"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Tejinder-Sharma-img.png" />
+                                    <h3 class="endorsement-name">Tejinder Sharma MBE</h3>
+                                    <h6 class="endorsement-position">General Secretary, Katha UK
+                                    </h6>
+                                    <p class="endorsement">“A new horizon in the field of
+                                        spirituality” </p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide13' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Swami-Shantatmananda"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Swami-Shant-img.png" />
+                                    <h3 class="endorsement-name">Swami Shantatmananda </h3>
+                                    <h6 class="endorsement-position">Secretary, Ramakrishna
+                                        Mission, Delhi</h6>
+                                    <p class="endorsement">“Truly praiseworthy”</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide14' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Philip-Goldberg"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Philip-Goldberg-img.png" />
+                                    <h3 class="endorsement-name">Philip Goldberg</h3>
+                                    <h6 class="endorsement-position">Author of American Veda
+                                    </h6>
+                                    <p class="endorsement">“The Heartfulness Way explains
+                                        meditation’s higher purpose with clarity and humility.”
+                                    </p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide15' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Aiyengar"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./aiyengar-img.png" />
+                                    <h3 class="endorsement-name">Lt. Gen. S.R.R. Aiyengar </h3>
+                                    <h6 class="endorsement-position">PVSM, AVSM, VSM (Ret.)</h6>
+                                    <p class="endorsement">“With The Heartfulness Way, Daaji has
+                                        demystified spirituality.” </p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide16' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Varun-Soni"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Varun-Soni-img.png" />
+                                    <h3 class="endorsement-name">Varun Soni, Ph.D.</h3>
+                                    <h6 class="endorsement-position">Dean of Religious Life,
+                                        University of Southern California </h6>
+                                    <p class="endorsement">“An elegant and eloquent introduction
+                                        to a profound meditative practice” </p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide17' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Shripad-Naik"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./shripad-naik-img.png" />
+                                    <h3 class="endorsement-name">Shripad Naik</h3>
+                                    <h6 class="endorsement-position">Minister of Ayurveda, Yoga
+                                        & Naturopathy, Unani, Siddha and Homoeopathy (AYUSH)
+                                    </h6>
+                                    <p class="endorsement">"Clearly articulates a simple and
+                                        direct path for the modern seeker"</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide18' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Shashank-Subramanyam"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./Shashank-Subramanyam-img.png" />
+                                    <h3 class="endorsement-name">Maestro Shashank Subramanyam
+                                    </h3>
+                                    <h6 class="endorsement-position">Grammy-nominated Indian
+                                        classical flautist</h6>
+                                    <p class="endorsement">"This book beautifully describes how
+                                        to cultivate inspiration from within and share it with
+                                        others."</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide19' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Avtar-Singh"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./avtar-singh-img.png" />
+                                    <h3 class="endorsement-name">Avtar Singh Sc.D.</h3>
+                                    <h6 class="endorsement-position">Alumni, MIT, Director,
+                                        Center for Horizons Research in Science of Consciousness
+                                        and Mindfulness </h6>
+                                    <p class="endorsement">"The book “The Heartfulness Way” is a
+                                        significant contribution explaining"</p>
+                                </div>
+                            </a></div>
+                        <div id='endorsements_slide_slide20' class='sa_hover_container'
+                            style='padding:3% 3%; margin:0px 0%; '><a href="endorsements/#Partha-Nandi"
+                                class="endorsement-section">
+                                <div class="book-endorsements">
+                                    <img src=" ./partha-nandi-img.png" />
+                                    <h3 class="endorsement-name">Partha Nandi </h3>
+                                    <h6 class="endorsement-position">Ask Dr Nandi, Emmy award
+                                        winning television show</h6>
+                                    <p class="endorsement">“The Heartfulness Way is a work of
+                                        art. Daaji beautifully captures the essence and power of
+                                        spirituality."</p>
+                                </div>
+                            </a></div>
+                    </div>
+                </div>
+                <script type='text/javascript'>
+                    jQuery(document).ready(function () {
+                        jQuery('#endorsements_slide').owlCarousel({
+                            responsive: {
+                                0: { items: 1 },
+                                480: { items: 2 },
+                                768: { items: 2 },
+                                980: { items: 4 },
+                                1200: { items: 4 },
+                                1500: { items: 4 }
+                            },
+                            autoplay: true,
+                            autoplayTimeout: 5000,
+                            autoplayHoverPause: true,
+                            smartSpeed: 200,
+                            fluidSpeed: 200,
+                            autoplaySpeed: 200,
+                            navSpeed: 200,
+                            dotsSpeed: 200,
+                            loop: true,
+                            nav: true,
+                            navText: ['', ''],
+                            dots: true,
+                            responsiveRefreshRate: 200,
+                            slideBy: 1,
+                            mergeFit: true,
+                            autoHeight: false,
+                            mouseDrag: true,
+                            touchDrag: true
+                        });
+                        jQuery('#endorsements_slide').css('visibility', 'visible');
+                        sa_resize_endorsements_slide();
+                        window.addEventListener('resize', sa_resize_endorsements_slide);
+                        function sa_resize_endorsements_slide() {
+                            var min_height = '50';
+                            var win_width = jQuery(window).width();
+                            var slider_width = jQuery('#endorsements_slide').width();
+                            if (win_width < 480) {
+                                var slide_width = slider_width / 1;
+                            } else if (win_width < 768) {
+                                var slide_width = slider_width / 2;
+                            } else if (win_width < 980) {
+                                var slide_width = slider_width / 2;
+                            } else if (win_width < 1200) {
+                                var slide_width = slider_width / 4;
+                            } else if (win_width < 1500) {
+                                var slide_width = slider_width / 4;
+                            } else {
+                                var slide_width = slider_width / 4;
+                            }
+                            slide_width = Math.round(slide_width);
+                            var slide_height = '0';
+                            if (min_height == 'aspect43') {
+                                slide_height = (slide_width / 4) * 3; slide_height = Math.round(slide_height);
+                            } else if (min_height == 'aspect169') {
+                                slide_height = (slide_width / 16) * 9; slide_height = Math.round(slide_height);
+                            } else {
+                                slide_height = (slide_width / 100) * min_height; slide_height = Math.round(slide_height);
+                            }
+                            jQuery('#endorsements_slide .owl-item .sa_hover_container').css('min-height', slide_height + 'px');
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<link rel='stylesheet' id='owl_carousel_css-css'
+    href='https://theheartfulnessway.com/in/wp-content/plugins/slide-anything/owl-carousel/owl.carousel.css?ver=2.2.1.1'
+    type='text/css' media='all' />
+<link rel='stylesheet' id='owl_theme_css-css'
+    href='https://theheartfulnessway.com/in/wp-content/plugins/slide-anything/owl-carousel/sa-owl-theme.css?ver=2.0'
+    type='text/css' media='all' />
+<link rel='stylesheet' id='owl_animate_css-css'
+    href='https://theheartfulnessway.com/in/wp-content/plugins/slide-anything/owl-carousel/animate.min.css?ver=2.0'
+    type='text/css' media='all' />
+
+
+<script type='text/javascript'
+    src='https://theheartfulnessway.com/in/wp-content/plugins/slide-anything/owl-carousel/owl.carousel.min.js?ver=2.2.1'></script>
+
+
+
+
+<section id="thw-languages" class="thw-book-languages">
+    <div class="container">
+        <h5>Now available</h5>
+        <h3 class="hfnway-section">In 7 Languages</h3>
+        <div class="hfnway-border"></div>
+        <div class='white'
+            style='background:rgba(255, 255, 255, 0); border:solid 0px #f0f0f0; border-radius:0px; padding:8px 0px 8px 0px;'>
+            <div id='thw_slider' class='owl-carousel sa_owl_theme owl-pagination-true' data-slider-id='thw_slider'
+                style='visibility:hidden;'>
+                <div id='thw_slider_slide01' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-english' /></div>
+                        <div class="lang-book">
+                            <p>ENGLISH</p>
+                            <a href="https://www.amazon.in/gp/product/9386850567/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=9386850567&linkCode=as2&tag=hfnlife0e-21&linkId=17ae41d577b35d10eb544e0b9913c94f"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div id='thw_slider_slide02' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-hindi' /></div>
+                        <div class="lang-book">
+                            <p>HINDI</p>
+                            <a href="https://www.amazon.in/gp/product/9387578089/ref=as_li_tl?ie=UTF8&camp=3638&creative=24630&creativeASIN=9387578089&linkCode=as2&tag=hfnlife0e-21&linkId=0dfad869bf47758835b1b9baed0c2a24"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div id='thw_slider_slide03' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-gujarathi' /></div>
+                        <div class="lang-book">
+                            <p>GUJARATI</p>
+                            <a href="https://www.shpt.in/index.php?route=product/product&path=1&product_id=2686"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div id='thw_slider_slide04' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-tamil' /></div>
+                        <div class="lang-book">
+                            <p>TAMIL</p>
+                            <a href="https://www.shpt.in/index.php?route=product/product&path=1&product_id=2684"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div id='thw_slider_slide05' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-telugu' /></div>
+                        <div class="lang-book">
+                            <p>TELUGU</p>
+                            <a href="https://www.shpt.in/index.php?route=product/product&path=1&product_id=2685"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div id='thw_slider_slide06' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-marathi' /></div>
+                        <div class="lang-book">
+                            <p>MARATHI</p>
+                            <a href="https://www.shpt.in/index.php?route=product/product&path=1&product_id=2687"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div id='thw_slider_slide07' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-malayalam' /></div>
+                        <div class="lang-book">
+                            <p>MALAYALAM</p>
+                            <a href="https://www.shpt.in/index.php?route=product/product&path=1&product_id=2688"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+                <div id='thw_slider_slide08' class='sa_hover_container'
+                    style='padding:0% 0%; margin:0px 0%; background-color:rgba(255, 255, 255, 0); '>
+                    <div class="thw-languages">
+                        <div class="lang-book-img"><img src="./thw-cover-gujarathi.jpg" alt='thw-kannada' /></div>
+                        <div class="lang-book">
+                            <p>KANNADA</p>
+                            <a href="https://www.shpt.in/index.php?route=product/product&path=1&product_id=2689"
+                                target="_blank" class="book-buynow">ORDER NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type='text/javascript'>
+            jQuery(document).ready(function () {
+                jQuery('#thw_slider').owlCarousel({
+                    responsive: {
+                        0: { items: 1 },
+                        480: { items: 2 },
+                        768: { items: 4 },
+                        980: { items: 6 },
+                        1200: { items: 6 },
+                        1500: { items: 6 }
+                    },
+                    autoplay: true,
+                    autoplayTimeout: 6200,
+                    autoplayHoverPause: true,
+                    smartSpeed: 300,
+                    fluidSpeed: 300,
+                    autoplaySpeed: 300,
+                    navSpeed: 300,
+                    dotsSpeed: 300,
+                    loop: true,
+                    nav: false,
+                    navText: ['', ''],
+                    dots: true,
+                    responsiveRefreshRate: 200,
+                    slideBy: 1,
+                    mergeFit: true,
+                    autoHeight: false,
+                    mouseDrag: true,
+                    touchDrag: true
+                });
+                jQuery('#thw_slider').css('visibility', 'visible');
+                sa_resize_thw_slider();
+                window.addEventListener('resize', sa_resize_thw_slider);
+                function sa_resize_thw_slider() {
+                    var min_height = '80';
+                    var win_width = jQuery(window).width();
+                    var slider_width = jQuery('#thw_slider').width();
+                    if (win_width < 480) {
+                        var slide_width = slider_width / 1;
+                    } else if (win_width < 768) {
+                        var slide_width = slider_width / 2;
+                    } else if (win_width < 980) {
+                        var slide_width = slider_width / 4;
+                    } else if (win_width < 1200) {
+                        var slide_width = slider_width / 6;
+                    } else if (win_width < 1500) {
+                        var slide_width = slider_width / 6;
+                    } else {
+                        var slide_width = slider_width / 6;
+                    }
+                    slide_width = Math.round(slide_width);
+                    var slide_height = '0';
+                    if (min_height == 'aspect43') {
+                        slide_height = (slide_width / 4) * 3; slide_height = Math.round(slide_height);
+                    } else if (min_height == 'aspect169') {
+                        slide_height = (slide_width / 16) * 9; slide_height = Math.round(slide_height);
+                    } else {
+                        slide_height = (slide_width / 100) * min_height; slide_height = Math.round(slide_height);
+                    }
+                    jQuery('#thw_slider .owl-item .sa_hover_container').css('min-height', slide_height + 'px');
+                }
+            });
+        </script>
+
+    </div>
+</section>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' id='hfn-boostrap-css-css' href='bootstrap.min.css?ver=5.3.2' type='text/css' media='all' />
+    
+    <link rel='stylesheet' id='hfn-boostrap-js-css' href='bootstrap.js?ver=5.3.2' type='text/css' media='all' />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"
+        integrity="sha256-SOuLUArmo4YXtXONKz+uxIGSKneCJG4x0nVcA0pFzV0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Heartfulness eductaion</title>
+</head>
+
+<body>
+
+    <div class="heartful-journey text-center">
+
+        <div id="mi-slider" class="mi-slider">
+            <ul class="mi-current">
+                <li><a href="#education" rel="m_PageScroll2id">
+                        <div class="item-zoom"><img class="img1" src="./images/hfn-student.jpg" alt="img01"></div>
+                        <div class="box-cnt">
+                            <h4>Education</h4>
+                            <p>Training and Curriculum</p>
+                        </div>
+                    </a>
+                    <p><a href="#education" rel="m_PageScroll2id"></a></p>
+                </li>
+                <li><a href="#yoga" rel="m_PageScroll2id">
+                        <div class="item-zoom"><img class="img2" src="./images/yoga-teacher-trainer-scroll.jpg"
+                                alt="A man and woman are practicing Heartfulness Yoga"></div>
+                        <div class="box-cnt">
+                            <h4>Yoga</h4>
+                            <p>Teacher Training Courses</p>
+                        </div>
+                    </a>
+                    <p><a href="#yoga" rel="m_PageScroll2id"></a></p>
+                </li>
+                <li><a href="#wellness" rel="m_PageScroll2id">
+                        <div class="item-zoom"><img class="img3" src="./images/wellness-retreat-scroll.jpg"
+                                alt="Heartfulness education trust students are practicing yogasans"></div>
+                        <div class="box-cnt">
+                            <h4>Wellness</h4>
+                            <p>Meditation retreats</p>
+                        </div>
+                    </a>
+                    <p><a href="#wellness" rel="m_PageScroll2id"></a></p>
+                </li>
+                <li><a href="#fellowship" rel="m_PageScroll2id">
+                        <div class="item-zoom"><img class="img4" src="./images/hfn-teacher.jpg" alt="img01"></div>
+                        <div class="box-cnt">
+                            <h4>Fellowship</h4>
+                            <p>Curriculum for Students</p>
+                        </div>
+                    </a>
+                    <p><a href="#fellowship" rel="m_PageScroll2id"></a></p>
+                </li>
+                <li><a href="#abouttrust" rel="m_PageScroll2id">
+                        <div class="item-zoom"><img class="img3" src="./images/hfn-start.jpg" alt="img04"></div>
+                        <div class="box-cnt">
+                            <h4>About Trust</h4>
+                            <p>Heart-based Meditation</p>
+                        </div>
+                    </a>
+                    <p><a href="#abouttrust" rel="m_PageScroll2id"></a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>(function ($, window, undefined) {
+
+        'use strict';
+
+        $.CatSlider = function (options, element) {
+            this.$el = $(element);
+            this._init(options);
+        };
+
+        $.CatSlider.prototype = {
+
+            _init: function (options) {
+
+                // the categories (ul)
+                this.$categories = this.$el.children('ul');
+                // the navigation
+                this.$navcategories = this.$el.find('nav > a');
+                var animEndEventNames = {
+                    'WebkitAnimation': 'webkitAnimationEnd',
+                    'OAnimation': 'oAnimationEnd',
+                    'msAnimation': 'MSAnimationEnd',
+                    'animation': 'animationend'
+                };
+                // animation end event name
+                this.animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
+                // animations and transforms support
+                this.support = Modernizr.csstransforms && Modernizr.cssanimations;
+                // if currently animating
+                this.isAnimating = false;
+                // current category
+                this.current = 0;
+                var $currcat = this.$categories.eq(0);
+                if (!this.support) {
+                    this.$categories.hide();
+                    $currcat.show();
+                }
+                else {
+                    $currcat.addClass('mi-current');
+                }
+                // current nav category
+                this.$navcategories.eq(0).addClass('mi-selected');
+                // initialize the events
+                this._initEvents();
+
+            },
+            _initEvents: function () {
+
+                var self = this;
+                this.$navcategories.on('click.catslider', function () {
+                    self.showCategory($(this).index());
+                    return false;
+                });
+
+                // reset on window resize..
+                $(window).on('resize', function () {
+                    self.$categories.removeClass().eq(0).addClass('mi-current');
+                    self.$navcategories.eq(self.current).removeClass('mi-selected').end().eq(0).addClass('mi-selected');
+                    self.current = 0;
+                });
+
+            },
+            showCategory: function (catidx) {
+
+                if (catidx === this.current || this.isAnimating) {
+                    return false;
+                }
+                this.isAnimating = true;
+                // update selected navigation
+                this.$navcategories.eq(this.current).removeClass('mi-selected').end().eq(catidx).addClass('mi-selected');
+
+                var dir = catidx > this.current ? 'right' : 'left',
+                    toClass = dir === 'right' ? 'mi-moveToLeft' : 'mi-moveToRight',
+                    fromClass = dir === 'right' ? 'mi-moveFromRight' : 'mi-moveFromLeft',
+                    // current category
+                    $currcat = this.$categories.eq(this.current),
+                    // new category
+                    $newcat = this.$categories.eq(catidx),
+                    $newcatchild = $newcat.children(),
+                    lastEnter = dir === 'right' ? $newcatchild.length - 1 : 0,
+                    self = this;
+
+                if (this.support) {
+
+                    $currcat.removeClass().addClass(toClass);
+
+                    setTimeout(function () {
+
+                        $newcat.removeClass().addClass(fromClass);
+                        $newcatchild.eq(lastEnter).on(self.animEndEventName, function () {
+
+                            $(this).off(self.animEndEventName);
+                            $newcat.addClass('mi-current');
+                            self.current = catidx;
+                            var $this = $(this);
+                            // solve chrome bug
+                            self.forceRedraw($this.get(0));
+                            self.isAnimating = false;
+
+                        });
+
+                    }, $newcatchild.length * 90);
+
+                }
+                else {
+
+                    $currcat.hide();
+                    $newcat.show();
+                    this.current = catidx;
+                    this.isAnimating = false;
+
+                }
+
+            },
+            // based on http://stackoverflow.com/a/8840703/989439
+            forceRedraw: function (element) {
+                if (!element) { return; }
+                var n = document.createTextNode(' '),
+                    position = element.style.position;
+                element.appendChild(n);
+                element.style.position = 'relative';
+                setTimeout(function () {
+                    element.style.position = position;
+                    n.parentNode.removeChild(n);
+                }, 25);
+            }
+
+        }
+
+        $.fn.catslider = function (options) {
+            var instance = $.data(this, 'catslider');
+            if (typeof options === 'string') {
+                var args = Array.prototype.slice.call(arguments, 1);
+                this.each(function () {
+                    instance[options].apply(instance, args);
+                });
+            }
+            else {
+                this.each(function () {
+                    instance ? instance._init() : instance = $.data(this, 'catslider', new $.CatSlider(options, this));
+                });
+            }
+            return instance;
+        };
+
+    })(jQuery, window);</script>
+<script>
+    (function ($) {
+
+        $('#mi-slider').catslider();
+
+    })(jQuery);
+</script>
+
+<style>
+    .mi-slider .box-cnt {
+        margin: 0px -30px;
+    }
+
+    .mi-slider ul li h4 {
+        display: inline-block;
+        font-family: gotham-book;
+        font-size: 15px;
+        padding: 22px 0px 0;
+        line-height: 22px;
+        margin: 0px;
+    }
+
+    .mi-slider .box-cnt p {
+        font-size: 13px;
+        color: #666;
+        line-height: 18px;
+    }
+
+    .mi-slider {
+        padding: 40px 0px 20px;
+        height: auto;
+    }
+
+    .mi-slider ul {
+        list-style-type: none;
+        position: relative;
+        width: 100%;
+        left: 0;
+        overflow: hidden;
+        text-align: center;
+        pointer-events: none;
+        padding: 0px;
+    }
+
+    .no-js .mi-slider ul {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin: 0;
+        overflow: visible;
+
+    }
+
+    .mi-slider ul.mi-current {
+        background: url(./images/background-line.png);
+        background-repeat: no-repeat;
+        background-size: 1216px;
+        background-position: 50% 0;
+    }
+
+    .mi-slider ul.mi-current {
+        pointer-events: auto;
+    }
+
+    .mi-slider ul li {
+        display: inline-block;
+        padding: 30px;
+        width: 180px;
+        max-width: 300px;
+        -webkit-transform: translateX(600%);
+        transform: translateX(600%);
+        -webkit-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear;
+    }
+
+    .no-js .mi-slider ul li {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .mi-slider ul li a,
+    .mi-slider ul li img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .mi-slider ul li a {
+        outline: none;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .mi-slider ul li img {
+        max-width: 100%;
+        border: 1px solid #1cb3f7;
+        padding: 5px;
+        border-radius: 3px;
+        object-fit: cover;
+    }
+
+    .mi-slider ul li img.img1 {
+        -ms-transform: rotate(-10deg);
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+
+    .mi-slider ul li img.img2 {
+        -ms-transform: rotate(15deg);
+        -webkit-transform: rotate(15deg);
+        transform: rotate(15deg);
+        margin-bottom: 10px;
+    }
+
+    .mi-slider ul li img.img3 {
+        -ms-transform: rotate(-10deg);
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+        margin-bottom: 15px;
+    }
+
+    .mi-slider ul li img.img4 {
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+        margin-bottom: 10px;
+    }
+
+    .mi-slider ul li img.img5 {
+        -ms-transform: rotate(10deg);
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+        margin-bottom: 15px;
+    }
+
+    .mi-slider ul li img.img6 {
+        -ms-transform: rotate(-10deg);
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+        margin-bottom: 5px;
+    }
+
+    .mi-slider .box-cnt {
+        margin: 0px -30px;
+    }
+
+    .mi-slider ul li h4 {
+        display: inline-block;
+        font-family: gotham-book;
+        font-size: 15px;
+        padding: 22px 0px 0;
+        line-height: 22px;
+        margin: 0px;
+    }
+
+    .mi-slider .box-cnt p {
+        font-size: 13px;
+        color: #666;
+        line-height: 18px;
+
+    }
+
+    .mi-slider ul li:hover {
+        opacity: 1;
+    }
+
+
+    .item-zoom {
+        position: relative;
+    }
+
+    .item-zoom:hover img {
+        -moz-transform: rotate(0deg) scale(1.1) !important;
+        -webkit-transform: rotate(0deg) scale(1.1) !important;
+        transform: rotate(0deg) scale(1.1) !important;
+    }
+
+    .item-zoom img {
+        width: 100%;
+        object-fit: cover;
+        -moz-transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+
+
+
+
+    /* Move classes and animations */
+
+    .mi-slider ul:first-child li,
+    .no-js .mi-slider ul li {
+        -webkit-animation: scaleUp 350ms ease-in-out both;
+        animation: scaleUp 350ms ease-in-out both;
+    }
+
+    @-webkit-keyframes scaleUp {
+        0% {
+            -webkit-transform: translateX(0) scale(0);
+        }
+
+        100% {
+            -webkit-transform: translateX(0) scale(1);
+        }
+    }
+
+    @keyframes scaleUp {
+        0% {
+            -webkit-transform: translateX(0) scale(0);
+            transform: translateX(0) scale(0);
+        }
+
+        100% {
+            -webkit-transform: translateX(0) scale(1);
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    .mi-slider ul:first-child li:first-child {
+        -webkit-animation-delay: 90ms;
+        animation-delay: 90ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(2) {
+        -webkit-animation-delay: 290ms;
+        animation-delay: 290ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(3) {
+        -webkit-animation-delay: 490ms;
+        animation-delay: 490ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(4) {
+        -webkit-animation-delay: 690ms;
+        animation-delay: 690ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(5) {
+        -webkit-animation-delay: 890ms;
+        animation-delay: 890ms;
+    }
+
+    .mi-slider ul:first-child li:nth-child(6) {
+        -webkit-animation-delay: 1090ms;
+        animation-delay: 1090ms;
+    }
+
+    /* moveFromRight */
+
+    .mi-slider ul.mi-moveFromRight li {
+        -webkit-animation: moveFromRight 350ms ease-in-out both;
+        animation: moveFromRight 350ms ease-in-out both;
+    }
+
+    /* moveFromLeft */
+
+    .mi-slider ul.mi-moveFromLeft li {
+        -webkit-animation: moveFromLeft 350ms ease-in-out both;
+        animation: moveFromLeft 350ms ease-in-out both;
+    }
+
+    /* moveToRight */
+
+    .mi-slider ul.mi-moveToRight li {
+        -webkit-animation: moveToRight 350ms ease-in-out both;
+        animation: moveToRight 350ms ease-in-out both;
+    }
+
+    /* moveToLeft */
+
+    .mi-slider ul.mi-moveToLeft li {
+        -webkit-animation: moveToLeft 350ms ease-in-out both;
+        animation: moveToLeft 350ms ease-in-out both;
+    }
+
+    /* Animation Delays */
+
+    .mi-slider ul.mi-moveToLeft li:first-child,
+    .mi-slider ul.mi-moveFromRight li:first-child,
+    .mi-slider ul.mi-moveToRight li:nth-child(4),
+    .mi-slider ul.mi-moveFromLeft li:nth-child(4) {
+        -webkit-animation-delay: 0ms;
+        animation-delay: 0ms;
+    }
+
+    .mi-slider ul.mi-moveToLeft li:nth-child(2),
+    .mi-slider ul.mi-moveFromRight li:nth-child(2),
+    .mi-slider ul.mi-moveToRight li:nth-child(3),
+    .mi-slider ul.mi-moveFromLeft li:nth-child(3) {
+        -webkit-animation-delay: 90ms;
+        animation-delay: 90ms;
+    }
+
+    .mi-slider ul.mi-moveToLeft li:nth-child(3),
+    .mi-slider ul.mi-moveFromRight li:nth-child(3),
+    .mi-slider ul.mi-moveToRight li:nth-child(2),
+    .mi-slider ul.mi-moveFromLeft li:nth-child(2) {
+        -webkit-animation-delay: 180ms;
+        animation-delay: 180ms;
+    }
+
+    .mi-slider ul.mi-moveToLeft li:nth-child(4),
+    .mi-slider ul.mi-moveFromRight li:nth-child(4),
+    .mi-slider ul.mi-moveToRight li:first-child,
+    .mi-slider ul.mi-moveFromLeft li:first-child {
+        -webkit-animation-delay: 270ms;
+        animation-delay: 270ms;
+    }
+
+    /* Animations */
+
+    @-webkit-keyframes moveFromRight {
+        0% {
+            -webkit-transform: translateX(600%);
+        }
+
+        100% {
+            -webkit-transform: translateX(0%);
+        }
+    }
+
+    @-webkit-keyframes moveFromLeft {
+        0% {
+            -webkit-transform: translateX(-600%);
+        }
+
+        100% {
+            -webkit-transform: translateX(0%);
+        }
+    }
+
+    @-webkit-keyframes moveToRight {
+        0% {
+            -webkit-transform: translateX(0%);
+        }
+
+        100% {
+            -webkit-transform: translateX(600%);
+        }
+    }
+
+    @-webkit-keyframes moveToLeft {
+        0% {
+            -webkit-transform: translateX(0%);
+        }
+
+        100% {
+            -webkit-transform: translateX(-600%);
+        }
+    }
+
+    @keyframes moveFromRight {
+        0% {
+            -webkit-transform: translateX(600%);
+            transform: translateX(600%);
+        }
+
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes moveFromLeft {
+        0% {
+            -webkit-transform: translateX(-600%);
+            transform: translateX(-600%);
+        }
+
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes moveToRight {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+
+        100% {
+            -webkit-transform: translateX(600%);
+            transform: translateX(600%);
+        }
+    }
+
+    @keyframes moveToLeft {
+        0% {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+        }
+
+        100% {
+            -webkit-transform: translateX(-600%);
+            transform: translateX(-600%);
+        }
+    }
+
+    .mi-slider {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 1200px) {
+        .mi-slider ul.mi-current {
+            background: none;
+        }
+    }
+
+    @media screen and (max-width: 910px) {
+        .mi-slider nav {
+            max-width: 90%;
+        }
+
+        .mi-slider nav a {
+            font-size: 12px;
+            padding: 40px 10px 30px 14px;
+        }
+    }
+
+    @media screen and (max-width: 740px) {
+        .mi-slider {
+            height: 300px;
+        }
+
+        .mi-slider nav {
+            top: 220px;
+        }
+    }
+
+    @media screen and (max-width: 490px) {
+        .mi-slider {
+            text-align: center;
+            height: auto;
+        }
+
+        .mi-slider ul {
+            position: relative;
+            display: inline;
+            bottom: auto;
+            pointer-events: auto;
+        }
+
+        .mi-slider ul li {
+            -webkit-animation: none !important;
+            animation: none !important;
+            -webkit-transform: translateX(0) !important;
+            transform: translateX(0) !important;
+            padding: 10px 3px;
+            min-width: 140px;
+        }
+
+        .mi-slider nav {
+            display: none;
+        }
+    }
+
+
+
+
+    @media screen and (max-width: 991px) {
+        .img-fluid {
+            width: 100%;
+        }
+    }
+</style>
