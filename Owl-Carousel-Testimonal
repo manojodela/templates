@@ -1,1 +1,388 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <style>
+        .testi-cont {
+            padding: 30px 20px 10px;
+            background-color: #fff;
+            color: #000;
+            background-clip: border-box;
+            border: 2px solid rgba(0, 0, 0, .125);
+            border-radius: 3rem
+        }
+    
+        .quote-img {
+            height: 0 !important;
+        }
+    
+        .testi {
+            background-image: url(https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/08/background-2.png);
+    
+        }
+    
+        .space {
+            height: 30px;
+        }
+    
+        .height {
+            margin: 10rem auto;
+        }
+    
+        .owl-carousel .owl-nav.disabled {
+            display: block !important;
+        }
+    
+        .owl-carousel .owl-nav button.owl-prev {
+            position: absolute;
+            top: 35%;
+            right: 100%;
+        }
+    
+        .owl-carousel .owl-nav button {
+            font-size: 50px !important;
+        }
+    
+        .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            top: 35%;
+            left: 100%;
+        }
+    
+        .owl-nav button.owl-prev {
+            outline: none !important;
+        }
+    
+        .owl-nav button.owl-next {
+            outline: none !important;
+        }
+    
+        .quote-img1,
+        .quote-img2 {
+            width: auto !important;
+        }
+    
+        .wrap {
+            align-items: center
+        }
+    
+        @media (max-width:912px) and (min-width:345px) {
+            .wrap {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    
+    
+    <script>
+        jQuery(document).ready(function () {
+            jQuery('.owl-two').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                slideBy: 2,
+                responsive: {
+                    0: {
+                        items: 1,
+                        slideBy: 1,
+                    },
+                    600: {
+                        items: 1,
+                        slideBy: 1,
+                    },
+                    820: {
+                        items: 1,
+                        slideBy: 1,
+                    },
+                    1000: {
+                        items: 2
+                    }
+                }
+            });
+
+            var url = $("#video").attr('src');
+            $("#video-img").on('hide.bs.modal', function () {
+                $("#video").attr('src', '');
+            });
+            $("#video-img").on('show.bs.modal', function () {
+                $("#video").attr('src', url);
+            });
+
+            $('.vid-slider .vid').on('click', function () {
+                // get required DOM Elements
+                var iframe_src = $(this).children('iframe').attr('src'),
+                    iframe = $('.video-popup'),
+                    iframe_video = $('.video-popup iframe'),
+                    close_btn = $('.close-video');
+                iframe_src = iframe_src + '?autoplay=1&rel=0'; // for autoplaying the popup video
+
+                // change the video source with the clicked one
+                $(iframe_video).attr('src', iframe_src);
+                $(iframe).fadeIn().addClass('show-video');
+
+                // remove the video overlay when clicking outside the video
+                $(document).on('click', function (e) {
+                    if ($(iframe).is(e.target) || $(close_btn).is(e.target)) {
+                        $(iframe).removeClass('show-video');
+                        $(iframe_video).attr('src', '');
+                    }
+                });
+
+            });
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+    <section class="testi pb-5 pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center heading">Testimonials</h3>
+                    <p class="text-center w-75 m-auto">The HELP program has already offered this course to more than 5-lakh students
+                        across the country. Here are a few testimonials from students and educators who have benefited from
+                        this course</p>
+                </div>
+            </div>
+            <p class="space">
+            </p>
+    
+            <div class="owl-two owl-carousel owl-theme">
+                <div class="item">
+                    <div class="testi-cont">
+                        <div class="row m-1 ">
+                            <div class="col-md-12">
+                                <img class="quote-img1"
+                                    src="https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/09/Icon-awesome-quote-left.png">
+                                <p></p>
+                            </div>
+                        </div>
+                        <p class="mt-3">I thank Heartfulness Guide Dr. Kamlesh D. Patel and his team of coordinators,
+                            trainers and volunteers for designing and rolling out such a wonderful program for junior
+                            college students. Covering about 3,00,000 students across the state is no easy task. I thank the
+                            entire team for providing selfless service to the student community. The program has helped the
+                            students to a great extent and has helped them get better ranks and created a stress free
+                            environment in colleges. We have also see a significant reduction in the tendency of suicides
+                            students which was seen in the yesteryears. This program has helped them explore their true
+                            inner potential and strength which will help them lead a joyful life.</p>
+                        <div class="row m-2 mt-5 wrap">
+                            <div class="col-md-2">
+                                <img class="quote-img2"
+                                    src="https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/08/Ellipse-1.png"
+                                    alt="Avatar" class="avatar" id="avatar1">
+                            </div>
+                            <div class="col-md-10">
+                                <p>Mrs. B. Udaya Lakshmi, IAS</p>
+                                <p>Former Secretary, Board of Intermediate Education, Government of Andhra Pradesh</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="testi-cont">
+                        <div class="row m-1">
+                            <div class="col-md-12">
+                                <img class="quote-img1"
+                                    src="https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/09/Icon-awesome-quote-left.png">
+                                <p></p>
+                            </div>
+                        </div>
+                        <p class="mt-3">“Meditation helped me a lot during my time of studies. It kept my stress levels low
+                            and concentration really high. It helped me be what I am. I recommend meditation to all
+                            students. I believe it can help anyone reach anywhere and be anything they desire if they
+                            believe in the art of meditation and are determined enough to practice it.”</p>
+                        <div class="row wrap" style="margin-top:67%;">
+                            <div class="col-md-2">
+                                <img class="quote-img2"
+                                    src="	https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/08/Ellipse-2.png"
+                                    alt="Avatar" class="avatar" id="avatar1">
+                            </div>
+                            <div class="col-md-10">
+                                <p>B. Likith</p>
+                                <p>JEE Mains Topper, Chittoor, 98.96 Percentile, Sri Chaitanya Junior College</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="testi-cont">
+                        <div class="row m-1">
+                            <div class="col-md-12">
+                                <img class="quote-img1"
+                                    src="https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/09/Icon-awesome-quote-left.png">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="height">
+                            <img src="https://i.ytimg.com/vi/UHCBXiTWLk8/hqdefault.jpg" alt="img">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="testi-cont">
+                        <div class="row m-1">
+                            <div class="col-md-12">
+                                <img class="quote-img1"
+                                    src="https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/09/Icon-awesome-quote-left.png">
+                                <p></p>
+                            </div>
+                        </div>
+                        <div class="height">
+                            <img src="https://i.ytimg.com/vi/MWCVGkMUp6E/hqdefault.jpg" alt="img">
+                        </div>
+                    </div>
+                </div>
+    
+    
+    
+    
+            </div>
+    
+        </div>
+    </section>
+</body>
+</html>
+
+
+<!-- <script>
+    $(document).ready(function () {
+        var url = $("#video").attr('src');
+        $("#video-img").on('hide.bs.modal', function () {
+            $("#video").attr('src', '');
+        });
+        $("#video-img").on('show.bs.modal', function () {
+            $("#video").attr('src', url);
+        });
+    });
+</script>
+<div class="bs-example">
+    <a href="#video-img" class="" data-toggle="modal"><img
+            src="https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/08/our-team.png" alt=""></a>
+
+    <div id="video-img" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+                </div>
+                <div class="modal-body">
+                    <iframe id="video" width="450" height="350" src="https://www.youtube.com/embed/V5he1JXiQbg"
+                        frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="item">
+
+    <div class="img-center">
+        <a href="#video-img" class="" data-toggle="modal"><img
+                src="https://writenodeedu.heartfulness.org/education/wp-content/uploads/2021/08/our-team.png"
+                alt=""></a>
+
+        <div id="video-img" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <iframe id="video" width="450" height="350" src="https://www.youtube.com/embed/V5he1JXiQbg"
+                            frameborder="0" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var url = $("#video").attr('src');
+    $("#video-img").on('hide.bs.modal', function () {
+        $("#video").attr('src', '');
+    });
+    $("#video-img").on('show.bs.modal', function () {
+        $("#video").attr('src', url);
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+        $('.vid-slider .vid').on('click', function () {
+            // get required DOM Elements
+            var iframe_src = $(this).children('iframe').attr('src'),
+                iframe = $('.video-popup'),
+                iframe_video = $('.video-popup iframe'),
+                close_btn = $('.close-video');
+            iframe_src = iframe_src + '?autoplay=1&rel=0'; // for autoplaying the popup video
+
+            // change the video source with the clicked one
+            $(iframe_video).attr('src', iframe_src);
+            $(iframe).fadeIn().addClass('show-video');
+
+            // remove the video overlay when clicking outside the video
+            $(document).on('click', function (e) {
+                if ($(iframe).is(e.target) || $(close_btn).is(e.target)) {
+                    $(iframe).removeClass('show-video');
+                    $(iframe_video).attr('src', '');
+                }
+            });
+
+        });
+
+    });
+</script>
+
+<div class="vid-slider">
+    <div class="vid-wrapper">
+        <div class="vid item">
+            <iframe width="213" height="119" src="https://www.youtube.com/embed/9xwazD5SyVg" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+           
+        </div>
+    </div>
+</div>
+<div class="video-popup">
+    <div class="iframe-wrapper"><iframe width="400" height="300" src="" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <span class="close-video"></span>
+    </div>
+</div>
+
+
+
+
+ -->
